@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormularioSolicitudComponent } from './components/formulario-solicitud/formulario-solicitud.component';
 
 @NgModule({
@@ -19,7 +20,9 @@ import { FormularioSolicitudComponent } from './components/formulario-solicitud/
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

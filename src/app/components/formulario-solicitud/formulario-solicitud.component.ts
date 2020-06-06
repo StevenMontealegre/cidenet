@@ -18,6 +18,7 @@ export class FormularioSolicitudComponent implements OnInit {
   ) {
     this.nombreProducto = ['Manzana', 'Naranja', 'Uva', 'Kola', 'Limonada'];
     this.tipoPresentacion = ['240', '350', '500', '600', '1000'];
+    this.formValidations();
 
    }
 
