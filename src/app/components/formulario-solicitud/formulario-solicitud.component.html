@@ -1,0 +1,73 @@
+<div class="main-content-header" id="content-header">
+    <h3> Solicitud de creación de producto </h3><br>
+</div>
+<form action="
+"></form>
+
+<div class="container-fluid">
+    <div class="d-flex align-items-center justify-content-center" id="main_card">
+        <div class="card mb-30 " style="width: 860px;">
+            <div class="card-body">
+                <div class="card-header">
+                    <h6> Detalle de la ordén </h6>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="inputState">Producto *</label>
+                                <select formControlName="idPerfil"
+                                    type="text" id="validationCustom02"
+                                    formControlName="idPerfil"
+                                    id="inputState"
+                                    class="form-control form-control-sm" required>
+                                    <option selected value=''>Selecciona</option>
+                                    <option *ngFor="let name of nombreProducto">
+                                        {{ name }}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="inputState">Tipo de presentación (ml) *</label>
+                                <select formControlName="idPerfil"
+                                    type="text" id="validationCustom02"
+                                    formControlName="idPerfil"
+                                    id="inputState"
+                                    class="form-control form-control-sm" required>
+                                    <option selected value=''>Selecciona</option>
+                                    <option *ngFor="let tipo of tipoPresentacion">
+                                        {{ tipo }}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label id="without-upper-and-lower">Cantidad *</label>
+                                <input type="text"
+                                class="form-control form-control-sm"
+                                formControlName="nombreSolicitante1"
+                                placeholder="Escribe aquí">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="text-align: right;">
+                                <button type="button" class="btn btn-primary idcPrimaryBtn" id="btn-style"> Agregar </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+#img {
+    margin: auto;
+    padding-right: 8px;
+    width: 100px;
+}
+.container {
+    padding-top: 20px;
+    margin-top: 90px;
+    background-color: lightgray;
+    border-radius: 15px;
+    margin-right: 0 auto;
+    width: 45%;
+    border-style: double
+}
+ .container input {
+     border-radius: 2px;
+     font-family: monospace;
+ }
+ .container button {
+     margin-top: 10px;
+ }
+ .container a {
+     color: orangered;
+     font-family: monospace;
+ }
+ #title {
+     color: orangered;
+     margin-top: 10px;
+     font-family: monospace;
+ }
+ .btn-sena {
+     background-color: #FF7F50;
+     color: white;
+     font-family: monospace;
+ }
+ .btn-sena:hover {
+     background-color: orangered;
+ }
+ #sign {
+     color:  orangered;
+     padding-bottom: 0;
+     margin: 0;
+     font-size: 10px;
+     font-family: monospace;
+ }
+ .container label {
+    font-family: monospace;
+ }
+
+
