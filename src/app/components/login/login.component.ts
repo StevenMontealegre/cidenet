@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Usuario } from '../interfaces/Usuario';
 
 @Component({
   selector: 'app-login',
@@ -7,10 +8,12 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  usuarios: Usuario[] = [];
 
   constructor(
     private router: Router,
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
   }
@@ -21,5 +24,4 @@ export class LoginComponent implements OnInit {
   btnGoFormularioSolicitud() {
     this.router.navigate(['solicitud']);
   }
-
 }

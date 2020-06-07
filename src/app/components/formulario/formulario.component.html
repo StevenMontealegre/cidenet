@@ -4,7 +4,7 @@
             <div class="card-header">
                 <h5 class="card-title">Registro de usuarios</h5>
             </div>
-            <form autocomplete="off" readonly>
+            <form autocomplete="off" [formGroup]="form" readonly>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="validationCustom01">Número de Cédula *</label>
@@ -13,9 +13,8 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputState">Perfil *</label>
-                        <select formControlName="idPerfil"
-                        type="text" id="validationCustom02"
-                        formControlName="idPerfil"
+                        <select type="text" id="validationCustom02"
+                        formControlName="perfil"
                         id="inputState"
                         class="form-control" required>
                                 <option selected value=''>Selecciona</option>
