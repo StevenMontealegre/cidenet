@@ -52,15 +52,18 @@ export class FormularioComponent implements OnInit {
   }
 
   crearUsuario() {
-    const usuario: Usuario = null;
-    usuario.cedula = this.form.get('cedula').value;
-    usuario.perfil = this.form.get('perfil').value;
-    usuario.primerNombre = this.form.get('priNombre').value;
-    usuario.segundoNombre = this.form.get('segNombre').value;
-    usuario.primerApellido = this.form.get('priApellido').value;
-    usuario.segundoApellido = this.form.get('segApellido').value;
-    usuario.telefono = this.form.get('telefono').value;
-    usuario.email = this.form.get('email').value;
+    console.log(this.form.get('cedula').value);
+    const cedula = this.form.get('cedula').value;
+    const perfil = this.form.get('perfil').value;
+    const primerNombre = this.form.get('priNombre').value;
+    const segundoNombre = this.form.get('segNombre').value;
+    const primerApellido = this.form.get('priApellido').value;
+    const segundoApellido = this.form.get('segApellido').value;
+    const telefono = this.form.get('telefono').value;
+    const email = this.form.get('email').value;
+
+    const usuario: Usuario = { cedula, perfil, primerNombre, segundoNombre, primerApellido, segundoApellido,
+    telefono, email};
     this.usuarios.push(usuario);
 
     console.log('Usuarios en el sistema:', this.usuarios.length);
