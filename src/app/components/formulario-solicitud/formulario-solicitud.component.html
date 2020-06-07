@@ -7,10 +7,10 @@
             <div class="card mb-30 " style="width: 860px;">
                 <div class="card-body">
                     <div class="card-header">
-                        <h6> Detalle de la ordén </h6>
+                        <h5> Creación de la ordén </h5>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12" id="style-col1">
                             <div class="row">
                                 <div class="col-md-4">
                                     <label for="inputState">Producto *</label>
@@ -48,22 +48,47 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12" style="text-align: right;">
-                                    <button type="button" class="btn btn-primary idcPrimaryBtn" id="btn-style"> Agregar </button>
+                                    <button type="button" class="btn btn-primary idcPrimaryBtn" id="btn-style" (click)="agregarProductosAOrden()"> Agregar </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center" id="main_card">
+            <div class="card mb-30 " style="width: 860px;">
+                <div class="card-body">
+                    <div class="card-header">
+                        <h5> Resumen de la ordén </h5>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                        </div>
+                    <table class="table m-0">
+                        <thead class="bort-none borpt-0">
+                            <tr>
+                                <th>Producto</th>
+                                <th>Presentación</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let producto of orden" class="border-none">
+                            <tr>
+                                <td>{{producto.nombre}}</td>
+                                <td>{{producto.presentacion}}</td>
+                                <td>{{producto.cantidad}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-danger">
+                                        Eliminar
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-2" style="text-align: right;" id="style-btn">
+                        <button type="submit" class="btn btn-outline-warning idcCancelBtn" id="style-btn" (click)="cancelarOrden()">Cancelar</button>
+                        <button type="submit" class="btn btn-primary idcPrimaryBtn" id="style-btn" (click)="enviarOrden()">Guardar</button>
                     </div>
                 </div>
             </div>

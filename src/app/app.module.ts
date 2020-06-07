@@ -8,6 +8,8 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormularioSolicitudComponent } from './components/formulario-solicitud/formulario-solicitud.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './components/material/material.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FormularioSolicitudComponent } from './components/formulario-solicitud/
     AppRoutingModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
