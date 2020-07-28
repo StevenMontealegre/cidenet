@@ -1,0 +1,5 @@
+package com.sena.wiguma.procesos.model.entity;
+
+public class ProcesoFilter {
+
+}

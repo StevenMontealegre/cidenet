@@ -1,0 +1,22 @@
+package com.sena.wiguma.procesos.model.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sena.wiguma.procesos.model.dao.IProcesoDao;
+import com.sena.wiguma.procesos.model.entity.Proceso;
+
+@Service
+public class ProcesoServiceImpl implements IProcesoService {
+	
+	@Autowired
+	private IProcesoDao procesoDao;
+
+	@Override
+	public Proceso save(Proceso proceso) throws Exception {
+		return procesoDao.save(proceso);
+	}
+	
+	
+
+}

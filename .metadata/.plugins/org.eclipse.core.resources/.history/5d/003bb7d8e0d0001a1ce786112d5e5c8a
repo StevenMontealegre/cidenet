@@ -1,0 +1,6 @@
+package com.sena.wiguma.procesos.model.service;
+
+public class IProcesoService {
+	
+
+}

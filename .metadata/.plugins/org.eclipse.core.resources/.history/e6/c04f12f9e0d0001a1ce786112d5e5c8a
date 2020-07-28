@@ -1,0 +1,12 @@
+package com.sena.wiguma.procesos.model.service;
+
+import com.sena.wiguma.procesos.model.entity.Proceso;
+import com.sena.wiguma.procesos.model.entity.ProcesoFilter;
+
+public class IProcesoService {
+	
+	public Proceso save(ProcesoFilter filter) {
+		return null;	
+	}
+
+}
