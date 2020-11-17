@@ -1,0 +1,126 @@
+<div class="d-flex justify-content-center" style="margin-top: 35px;" id="content">
+    <div class="card mb-30 " style="width: 860px;">
+        <div class="card-body">
+            <div class="card-header" id="header">
+                <h1 class="card-title" style="text-align: right;" id="titles">Edición de usuarios</h1>
+                <img src="assets/img/cidenet.png" id="img" alt="">
+            </div>
+            <form autocomplete="off" [formGroup]="form" readonly id="form">
+
+                <!-- input para búsqueda de colaborador -->
+                <div class="d-flex align-items-center justify-content-center" id="main_card" *ngIf="!stEnableInfoUsuario">
+                    <div class="card mb-30 " style="width: 1080px;">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-4">
+                                    <input placeholder="Ingrese la cédula del colaborador" oninput="this.value = this.value.toUpperCase()"
+                                        type="text" class="form-control form-control-sm" formControlName="cedula">
+                                        <p class="danger-color" *ngIf="!form.get('cedula').valid"> {{campoRequerido}} </p>
+                                </div>
+                                <div class="col-2">
+                                    <button type="button" class="btn btn-primary idcPrimaryBtn"
+                                        id="btn-style" (click)="getColaborador();">Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Control de resultado de búsqueda-->
+                <div *ngIf="stEnableInfoUsuario">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="validationCustom01">Primer apellido *</label>
+                            <input formControlName="primerApellido" oninput="this.value = this.value.toUpperCase()"
+                                class="form-control form-control-sm" type="text" id="cedula" placeholder="Escribe aquí">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="validationCustom01">Segundo apellido </label>
+                            <input formControlName="segundoApellido" oninput="this.value = this.value.toUpperCase()"
+                                class="form-control form-control-sm" type="text" id="cedula" placeholder="Escribe aquí">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="validationCustom03">Primer nombre *</label>
+                            <input formControlName="primerNombre" oninput="this.value = this.value.toUpperCase()"
+                                class="form-control form-control-sm" type="text" id="validationCustom03"
+                                placeholder="Escribe aquí" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="validationCustom03">Segundo nombre</label>
+                            <input formControlName="segundoNombre" oninput="this.value = this.value.toUpperCase()"
+                                class="form-control form-control-sm" type="text" id="validationCustom03"
+                                placeholder="Escribe aquí" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Pais del empleo *</label>
+                            <select type="text" id="validationCustom02" formControlName="pais" id="inputState"
+                                class="form-control form-control-sm" required>
+                                <option selected value='' disabled> {{pais}} </option>
+                                <option *ngFor="let pais of paises">
+                                        {{ pais }}
+                                    </option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Tipo de identificación *</label>
+                            <select type="text" id="validationCustom02" formControlName="tipoIdentificacion"
+                                id="inputState" class="form-control form-control-sm" required>
+                                <option selected value='' disabled>{{tipoId}}</option>
+                                <option *ngFor="let tipoDni of tipoIdentificacion">
+                                        {{ tipoDni }}
+                                    </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="validationCustom03">Número de identificación *</label>
+                            <input formControlName="numeroIdentificacion" maxlength="10" minlength="7"
+                                class="form-control form-control-sm" type="text" id="telefono"
+                                placeholder="Escribe aquí">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Fecha de ingreso *</label>
+                            <input type="date" max="2020-11-13" class="form-control form-control-sm" name="email"
+                                maxlength=65 placeholder="Escribe aquí" formControlName="fechaIngreso">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Área *</label>
+                            <select type="text" id="validationCustom02" formControlName="area" id="inputState"
+                                class="form-control form-control-sm" required>
+                                <option selected value='' disabled>{{area}}</option>
+                                <option *ngFor="let area of areas">
+                                        {{ area }}
+                                    </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-margin" id="btn-controls">
+                    <div class="form-row">
+                        <div class="col-md-12 col-md-offset-2" style="text-align: right;">
+                            <button type="submit" class="btn btn-outline-warning idcCancelBtn"
+                                id="btn-style" (click)="goToConsulta();">Cancelar</button>
+                            <button type="submit" class="btn btn-outline-warning idcCancelBtn"
+                                id="btn-style" [disabled]="this.btnControles" (click)="deleteColaborador();">Eliminar</button>
+                            <button type="submit" class="btn btn-primary idcPrimaryBtn" id="btn-style"
+                            [disabled]="this.btnControles" (click)="editarColaborador();">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

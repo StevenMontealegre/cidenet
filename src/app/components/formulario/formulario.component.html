@@ -1,83 +1,128 @@
-<div class="d-flex align-items-center justify-content-center" style="height: 90vh;">
+<div class="d-flex justify-content-center" style="margin-top: 35px;" id="content">
     <div class="card mb-30 " style="width: 860px;">
         <div class="card-body">
-            <div class="card-header">
-                <h5 class="card-title">Registro de usuarios</h5>
+            <div class="card-header" id="header">
+                <h1 class="card-title" style="text-align: right;" id="titles">Registro de usuarios</h1>
+                <img src="assets/img/cidenet.png" id="img"  alt="">
             </div>
-            <form autocomplete="off" [formGroup]="form" readonly>
+            <form autocomplete="off" [formGroup]="form" readonly id="form">
+                <div class="form-row">
+                    <div class="form-group col-md-6" >
+                        <label for="validationCustom01">Primer apellido *</label>
+                        <input  formControlName="primerApellido"
+                        oninput="this.value = this.value.toUpperCase()"
+                        class="form-control form-control-sm"
+                        type="text" id="cedula" placeholder="Escribe aquí"
+                        maxlength=20
+                        required>
+                        <p class="danger-color" *ngIf="!form.get('primerApellido').valid"> {{campoRequerido}} </p>
+                    </div>
+                    <div class="form-group col-md-6" >
+                        <label for="validationCustom01">Segundo apellido </label>
+                        <input  formControlName="segundoApellido"
+                        oninput="this.value = this.value.toUpperCase()"
+                        maxlength=20
+                        class="form-control form-control-sm"
+                        type="text"  id="cedula" placeholder="Escribe aquí">
+                    </div>
+                </div>
+
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="validationCustom01">Número de Cédula *</label>
-                        <input  formControlName="cedula"
-                        type="text" class="form-control" id="cedula" placeholder="Escribe aquí">
+                        <label for="validationCustom03">Primer nombre *</label>
+                        <input formControlName="primerNombre"
+                        oninput="this.value = this.value.toUpperCase()"
+                        class="form-control form-control-sm"
+                        type="text"  id="validationCustom03" placeholder="Escribe aquí"
+                        maxlength=20
+                        required>
+                        <p class="danger-color" *ngIf="!form.get('primerNombre').valid"> {{campoRequerido}} </p>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputState">Perfil *</label>
+                        <label for="validationCustom03">Segundo nombre</label>
+                        <input formControlName="segundoNombre"
+                        oninput="this.value = this.value.toUpperCase()"
+                        class="form-control form-control-sm"
+                        maxlength=50
+                        type="text" id="validationCustom03" placeholder="Escribe aquí">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Pais del empleo *</label>
                         <select type="text" id="validationCustom02"
-                        formControlName="perfil"
+                        formControlName="pais"
                         id="inputState"
-                        class="form-control" required>
+                        class="form-control form-control-sm"
+                        required>
                                 <option selected value=''>Selecciona</option>
-                                <option *ngFor="let profile of perfiles">
-                                    {{ profile }}
+                                <option *ngFor="let pais of paises">
+                                    {{ pais }}
                                 </option>
                         </select>
+                        <p class="danger-color" *ngIf="!form.get('pais').valid"> {{campoRequerido}} </p>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Tipo de identificación *</label>
+                        <select type="text" id="validationCustom02"
+                        formControlName="tipoIdentificacion"
+                        id="inputState"
+                        class="form-control form-control-sm"
+                        required>
+                                <option selected value=''>Selecciona</option>
+                                <option *ngFor="let tipoId of tipoIdentificacion">
+                                    {{ tipoId }}
+                                </option>
+                        </select>
+                        <p class="danger-color" *ngIf="!form.get('tipoIdentificacion').valid"> {{campoRequerido}} </p>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="validationCustom03">Primer Nombre *</label>
-                        <input formControlName="priNombre"
-                        oninput="this.value = this.value.toUpperCase()"
-                        type="text" class="form-control" id="validationCustom03" placeholder="Escribe aquí" required>
+                        <label for="validationCustom03">Número de identificación *</label>
+                        <input formControlName="numeroIdentificacion" 
+                        maxlength="12"
+                        class="form-control form-control-sm"
+                        type="text" id="telefono" placeholder="Escribe aquí"
+                        required>
+                        <p class="danger-color" *ngIf="!form.get('numeroIdentificacion').valid"> {{campoRequerido}} </p>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="validationCustom03">Segundo Nombre </label>
-                        <input formControlName="segNombre"
-                        oninput="this.value = this.value.toUpperCase()"
-                        type="text" class="form-control" id="validationCustom03" placeholder="Escribe aquí">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="validationCustom03">Primer Apellido *</label>
-                        <input formControlName="priApellido"
-                        oninput="this.value = this.value.toUpperCase()"
-                        type="text" class="form-control" id="validationCustom03" placeholder="Escribe aquí" required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="validationCustom03">Segundo Apellido </label>
-                        <input formControlName="segApellido"
-                        oninput="this.value = this.value.toUpperCase()"
-                        type="text" class="form-control" id="validationCustom03" placeholder="Escribe aquí">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="validationCustom03">Teléfono</label>
-                        <input formControlName="telefono" 
-                        maxlength="10"
-                        minlength="7"
-                        type="text" class="form-control" id="telefono" placeholder="Escribe aquí">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label>Email</label>
-                        <input type="email"
-                        class="form-control"
+                        <label>Fecha de ingreso *</label>
+                        <input type="date" max="2020-11-19"
+                        class="form-control form-control-sm"
                         name="email"
                         maxlength=65
                         placeholder="Escribe aquí"
-                        formControlName="email">
+                        formControlName="fechaIngreso"
+                        required>
+                        <p class="danger-color" *ngIf="!form.get('fechaIngreso').valid"> {{campoRequerido}} </p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Área *</label>
+                        <select type="text" id="validationCustom02"
+                        formControlName="area"
+                        id="inputState"
+                        class="form-control form-control-sm"
+                        required>
+                                <option selected value=''>Selecciona</option>
+                                <option *ngFor="let area of areas">
+                                    {{ area }}
+                                </option>
+                        </select>
+                        <p class="danger-color" *ngIf="!form.get('area').valid"> {{campoRequerido}} </p>
                     </div>
                 </div>
 
                 <div class="button-margin">
                     <div class="form-row">
                         <div class="col-md-12 col-md-offset-2" style="text-align: right;">
-                            <button type="submit" class="btn btn-outline-warning idcCancelBtn" id="btn-style" (click)="btnGoLogin()">Cancelar</button>
+                            <button type="submit" class="btn btn-outline-warning idcCancelBtn" id="btn-style" (click)="goToRegistro();">Cancelar</button>
                             <button type="submit" class="btn btn-primary idcPrimaryBtn" id="btn-style" (click)="crearUsuario()">Guardar</button>
                         </div>
                     </div>

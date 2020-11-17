@@ -1,10 +1,13 @@
 export interface Usuario {
-    cedula: string;
-    perfil: string;
-    primerNombre: string;
-    segundoNombre: string;
     primerApellido: string;
     segundoApellido: string;
-    telefono: string;
-    email: string;
-}
+    primerNombre: string;
+    segundoNombre: string;
+    pais: string;
+    tipoIdentificacion: string;
+    numeroIdentificacion: string;
+    fechaIngreso: string;
+    estado: string;
+    correo: string;
+    area: string;
+  }
