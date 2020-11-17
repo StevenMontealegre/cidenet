@@ -1,32 +1,32 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
-import { FormularioSolicitudComponent } from './components/formulario-solicitud/formulario-solicitud.component';
+import { ConsultaComponent } from './components/consulta/consulta.component';
+import { EdicionComponent } from './components/edicion/edicion.component';
 
 
 const routes: Routes = [
   {
-    path: 'login',
-    component: LoginComponent
+    path: 'edicion',
+    component: EdicionComponent
+  },
+  {
+    path: 'consulta',
+    component: ConsultaComponent
   },
   {
     path: 'registro',
     component: RegistroComponent
   },
   {
-    path: 'formulario',
+    path: 'nuevo',
     component: FormularioComponent
   },
-  {
-    path: 'solicitud',
-    component: FormularioSolicitudComponent
-  },
-  {
-    path: '**',
-    redirectTo: 'login'
-  }
+  // {
+  //   path: '**',
+  //   redirectTo: 'login'
+  // }
 ];
 
 @NgModule({
