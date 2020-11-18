@@ -1,0 +1,125 @@
+<div class="main-content-header">
+    <div class="row"> 
+        <div class="col-9" id="title">
+            <h1 id="title"> Portal de gestión de colaboradores </h1><br>
+        </div>
+        <div class="col-3" id="pdimg">
+            <img src="assets/img/cidenet-logo.png" id="img" alt="">
+        </div>
+    </div>
+
+
+</div>
+<form [formGroup]="form">
+    <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-center" id="main_card">
+            <div class="card mb-30 " style="width: 1150px;">
+                <div class="card-body">
+                    <div class="card-header">
+                        <h4 class="card-title" id="title"> Consulta de colaborador </h4>
+                    </div>
+                    <div class="row" id="filter">
+                        <div class="col-2">
+                            <input placeholder="Primer nombre" oninput="this.value = this.value.toUpperCase()"
+                                type="text" class="form-control form-control-sm" formControlName="primerNombre">
+                        </div>
+                        <div class="col-2">
+                            <input placeholder="Segundo nombre" oninput="this.value = this.value.toUpperCase()"
+                                type="text" class="form-control form-control-sm" formControlName="segundoNombre">
+                        </div>
+                        <div class="col-2">
+                            <input placeholder="Primer apellido" oninput="this.value = this.value.toUpperCase()"
+                                type="text" class="form-control form-control-sm" formControlName="primerApellido">
+                        </div>
+                        <div class="col-2">
+                            <input placeholder="Segundo apellido" oninput="this.value = this.value.toUpperCase()"
+                                type="text" class="form-control form-control-sm" formControlName="segundoApellido">
+                        </div>
+                        <div class="col-2">
+                            <select type="text" class="form-control form-control-sm" formControlName="pais">
+                                <option selected value='' disabled> País </option>
+                                <option *ngFor="let pais of paises">
+                                    {{ pais }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-2">
+                            <select type="text" class="form-control form-control-sm"
+                                formControlName="tipoIdentificacion">
+                                <option selected value='' disabled> Tipo I.D </option>
+                                <option *ngFor="let tipoId of tipoIdentificacion">
+                                    {{ tipoId }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row" id="filter">
+                        <div class="col-2">
+                            <input placeholder="Número I.D" oninput="this.value = this.value.toUpperCase()" type="text"
+                                class="form-control form-control-sm" formControlName="numeroIdentificacion">
+                        </div>
+                        <div class="col-2">
+                            <select type="text" class="form-control form-control-sm" formControlName="estado">
+                                <option selected value='' disabled> Estado </option>
+                                <option> Activo </option>
+                            </select>
+                        </div>
+                        <div class="col-2">
+                            <button type="button" class="btn btn-primary idcPrimaryBtn" id="btnFiltrar"
+                            (click)="getFilter();"> Filtrar
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-center justify-content-center" id="main_card">
+        <div class="card mb-30 " style="width: 1150px;">
+            <div class="card-body">
+
+
+                <table class="table-bordered table">
+                    <thead id="subtitle">
+                        <th>Primer nombre</th>
+                        <th>Segundo nombre</th>
+                        <th>Primer apellido</th>
+                        <th>Segundo apellido</th>
+                        <th>Tipo identificación</th>
+                        <th>Número identificación</th>
+                        <th>Pais</th>
+                        <th>Correo electrónico</th>
+                        <th>Estado</th>
+                    </thead>
+                    <tr *ngFor="let colaborador of colaboradores | paginate: { itemsPerPage: 10, currentPage: p }"
+                        id="text">
+                        <td>{{colaborador.primerNombre}}</td>
+                        <td>{{colaborador.segundoNombre}}</td>
+                        <td>{{colaborador.primerApellido}}</td>
+                        <td>{{colaborador.segundoApellido}}</td>
+                        <td>{{colaborador.tipoIdentificacion}}</td>
+                        <td>{{colaborador.numeroIdentificacion}}</td>
+                        <td>{{colaborador.pais}}</td>
+                        <td>{{colaborador.correo}}</td>
+                        <td>{{colaborador.estado}}</td>
+                    </tr>
+                </table>
+                <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente">
+                </pagination-controls>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-center justify-content-center" id="main_card">
+        <div class="card mb-30 " style="width: 1150px;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-2" style="text-align: right;">
+                        <button type="button" class="btn btn-primary idcPrimaryBtn" id="btn-style" (click)="goToEdicion();">Editar</button>
+                        <button type="button" class="btn btn-primary idcPrimaryBtn" id="btn-style" (click)="goToRegistro();">Nuevo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
