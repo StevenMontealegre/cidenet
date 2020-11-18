@@ -37,7 +37,7 @@ export class EdicionComponent implements OnInit {
   }
 
   goToConsulta() {
-    this.router.navigate(['/consulta']);
+    this.router.navigate(['']);
   }
 
   private formValidations() {
@@ -144,7 +144,7 @@ export class EdicionComponent implements OnInit {
 
         const pais = this.form.get('pais').value === '' ? usuario.pais : this.form.get('pais').value;
         const tipoIdentificacion = this.form.get('tipoIdentificacion').value === '' ? usuario.tipoIdentificacion :
-          this.form.get('ttipoIdentificacion').value;
+          this.form.get('tipoIdentificacion').value;
         const area = this.form.get('area').value === '' ? usuario.area : this.form.get('area').value;
 
         const numeroIdentificacion = this.form.get('numeroIdentificacion').value;

@@ -12,7 +12,7 @@ const routes: Routes = [
     component: EdicionComponent
   },
   {
-    path: 'consulta',
+    path: '',
     component: ConsultaComponent
   },
   {

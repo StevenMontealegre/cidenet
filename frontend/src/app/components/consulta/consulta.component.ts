@@ -53,14 +53,21 @@ export class ConsultaComponent implements OnInit {
   }
 
   getFilter() {
+    const primerApellido = this.form.get('primerApellido').value === '' ? null :  this.form.get('primerApellido').value;
+    const segundoApellido = this.form.get('segundoApellido').value === '' ? null :  this.form.get('segundoApellido').value;
+    const primerNombre = this.form.get('primerNombre').value === '' ? null :  this.form.get('primerNombre').value;
+    const segundoNombre = this.form.get('segundoNombre').value === '' ? null :  this.form.get('segundoNombre').value;
+    const pais = this.form.get('pais').value === '' ? null :  this.form.get('pais').value;
+    const tipoIdentificacion = this.form.get('tipoIdentificacion').value === '' ? null :  this.form.get('tipoIdentificacion').value;
+    const numeroIdentificacion = this.form.get('numeroIdentificacion').value === '' ? null :  this.form.get('numeroIdentificacion').value;
     const filter = {
-      primerApellido: this.form.get('primerApellido').value,
-      segundoApellido: this.form.get('segundoApellido').value,
-      primerNombre: this.form.get('primerNombre').value,
-      segundoNombre: this.form.get('segundoNombre').value,
-      pais: this.form.get('pais').value,
-      tipoIdentificacion: this.form.get('tipoIdentificacion').value,
-      numeroIdentificacion:  this.form.get('numeroIdentificacion').value,
+      primerApellido,
+      segundoApellido,
+      primerNombre,
+      segundoNombre,
+      pais,
+      tipoIdentificacion,
+      numeroIdentificacion
     };
 
     console.log(filter);

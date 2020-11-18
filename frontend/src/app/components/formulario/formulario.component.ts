@@ -153,7 +153,7 @@ export class FormularioComponent implements OnInit {
   }
 
   goToRegistro() {
-    this.router.navigate(['/consulta']);
+    this.router.navigate(['']);
   }
 
   saveColaborador(usuario: Usuario) {
