@@ -17,7 +17,7 @@ public class ProcesoController {
 	
 	private IProcesoService procesoService;
 	
-	@PutMapping(path= "/cambiarEstadoAprob", consumes = "application/json", produces = "application/json")
+	@PutMapping(path= "/agregarProceso", consumes = "application/json", produces = "application/json")
 	public ResponseEntity<Proceso> editarEstado(@RequestBody ProcesoFilter filter) throws Exception {
 		Proceso proceso = null;
 		try {

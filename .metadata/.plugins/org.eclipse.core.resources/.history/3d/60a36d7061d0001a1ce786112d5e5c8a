@@ -1,5 +1,0 @@
-package com.sena.wiguma.procesos.model.dao;
-
-public interface IProcesoDao {
-
-}
